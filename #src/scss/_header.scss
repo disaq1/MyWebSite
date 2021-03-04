@@ -1,0 +1,30 @@
+.header {
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+    background-color: $blueHeader;
+}
+
+.header__nav{
+    margin: 50px auto 0;
+    padding: 0 15px 5px;
+    max-width: 1200px;
+
+    @media screen and (max-width: 1230px){
+        margin: 35px auto 0;
+        max-width: 990px;
+    }
+
+    @media screen and (max-width: 1020px){
+        margin: 20px auto 0;
+        max-width: 768px;
+    }
+
+    @media screen and (max-width: 798px){
+        margin: 5px 0 0;
+        max-width: none;
+        width: 100%;
+    }
+    
+}

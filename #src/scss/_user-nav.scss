@@ -1,0 +1,109 @@
+.user-nav{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.user-nav__item{
+    margin: 0 15px 0 0;
+
+    &:last-child{
+        margin-right: 0;
+    }
+}
+
+.user-nav__link{
+    position: relative;
+    box-sizing: border-box;
+    display: block;
+    margin: 0;
+    padding: 15px 25px 15px 65px;
+
+    font-family: $gotham;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 17px;
+    line-height: 18px;
+    text-decoration: none;
+    color: $trueWhite;
+
+    background-color: $test1;
+    border-radius: 9px;
+    
+    @include smooth;
+
+    &::before{
+        content: "";
+        position: absolute;
+        top: 12px;
+        left: 25px;
+
+        display: block;
+        width: 23px;
+        height: 23px;
+
+        background-image: url("../img/header_whatsapp.svg");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    &:hover,
+    &:focus{
+        box-shadow: 0 0 10px 0 $trueWhite;
+        background-color: $test11;
+    }
+
+    @media screen and (max-width: 1020px){
+        padding: 7px 15px 7px 35px;
+        font-size: 14px;
+        line-height: 16px;
+
+        &::before{
+            top: 8px;
+            left: 15px;
+
+            width: 15px;
+            height: 15px;
+        }
+    }
+}
+
+.user-nav__btn{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 16px;
+
+    font-family: $gotham;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 700;
+    color: $trueWhite;
+    text-decoration: none;
+
+    background: none;
+    background-color: #4f15f3;
+    border: none;
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    @include smooth;
+
+    &:hover,
+    &:focus{
+        box-shadow: 0 0 10px 0 $trueWhite;
+    }
+
+    @media screen and (max-width: 1020px){
+        padding: 9px;
+
+        font-size: 12px;
+        line-height: 12px;
+    }
+}
