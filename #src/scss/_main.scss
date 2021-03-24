@@ -1,11 +1,36 @@
-﻿.main__title {
+﻿.main{
+    grid-column: 2 / 3;
+}
+
+.main__title {
     padding: 0;
     margin: 0;
 
 }
 
-.mainWrapper {
-    margin: 50px auto 0;
-    padding: 0 15px 5px;
-    max-width: 1200px;
+.main__title {
+    border: 1px solid #123123;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+.main__img {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+}
+
+.title-text {
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+    padding: 5px 20px;
+}
+
+.subtitle-text {
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+    padding: 0 150px;
+}
+
