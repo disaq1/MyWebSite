@@ -3,10 +3,9 @@
 @import "fonts.scss";
 @import "scaffolding.scss";
 
+@import "_breadCrumbs";
+@import "_contacts";
 @import "_about-me";
-@import "_main__title";
 @import "_main";
-@import "_user-nav";
-@import "_site-nav";
-@import "_nav";
 @import "_header";
+@import "_wrapper";
