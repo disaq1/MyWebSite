@@ -1,0 +1,51 @@
+﻿.breadCrumbs {
+    display: flex;
+    margin: 30px 0 0 0;
+}
+
+.breadCrumbs__links {
+    display: flex;
+}
+
+.breadCrumbs__thisPage {
+    margin: 0;
+}
+
+.breadCrumbs__main-link {
+    color: $trueBlack;
+    transition: 1s;
+}
+
+.breadCrumbs__main-link:hover {
+    background-color: $trueBlack;
+    color: $trueWhite;
+    @include smooth;
+    border-radius: 3px;
+}
+
+.breadCrumbs__slash {
+    margin: 0 7px 0 7px;
+}
+
+.arrow {
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid $test5;
+    border-right: 2px solid $test5;
+    margin: 4px 15px 0 0;
+}    
+
+.arrow-right {
+    transform: rotate(45deg);
+    transition: 1s;
+}
+
+.arrow:hover {
+    width: 10px;
+    height: 10px;
+    border-top: 3px solid $test10;
+    border-right: 3px solid $test10;
+    background-color: $test10;
+    transform: rotate(-45deg);
+    @include smooth;
+}
