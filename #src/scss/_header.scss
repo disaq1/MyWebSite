@@ -1,8 +1,11 @@
 .header {
-    margin: 0;
-    padding: 0;
+    margin:5px 10px;
+    padding: 10px;
     display: flex;
-
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
     background-color: $blueHeader;
 }
 
@@ -250,7 +253,7 @@
     text-decoration: none;
     color: $trueWhite;
 
-    background-color: $test1;
+    background-color: $cyan1;
     border-radius: 9px;
     
     @include smooth;
@@ -274,7 +277,7 @@
     &:hover,
     &:focus{
         box-shadow: 0 0 10px 0 $trueWhite;
-        background-color: $test11;
+        background-color: $green1;
     }
 
     @media screen and (max-width: 1020px){
@@ -306,7 +309,7 @@
     text-decoration: none;
 
     background: none;
-    background-color: #4f15f3;
+    background-color: $purple4;
     border: none;
     border-radius: 9px;
 

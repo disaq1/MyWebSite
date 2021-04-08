@@ -30,8 +30,8 @@
 .arrow {
     width: 8px;
     height: 8px;
-    border-top: 2px solid $test5;
-    border-right: 2px solid $test5;
+    border-top: 2px solid $cyan5;
+    border-right: 2px solid $cyan5;
     margin: 4px 15px 0 0;
 }    
 
@@ -43,9 +43,9 @@
 .arrow:hover {
     width: 10px;
     height: 10px;
-    border-top: 3px solid $test10;
-    border-right: 3px solid $test10;
-    background-color: $test10;
+    border-top: 3px solid $purple5;
+    border-right: 3px solid $purple5;
+    background-color: $purple5;
     transform: rotate(-45deg);
     @include smooth;
 }
