@@ -2,35 +2,390 @@
     grid-column: 2 / 3;
 }
 
-.main__title {
-    padding: 0;
-    margin: 0;
+// НАЧАЛО стилей для блока "Приветствие"
+.welcome-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(../img/bg_wave.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 50px;
+}
+
+.welcome__div {
+    position: relative;
+    width: calc(100% - 100px);
+    min-height: calc(100vh - 280px);
+    min-height: 300px;
+    background: rgba($color: $trueWhite, $alpha: 0.2);
+    box-shadow: 0 15px 35px rgba($color: $trueBlack, $alpha: 0.05);
+    border-radius: 20px;
+    border: 1px solid rgba($color: $trueWhite, $alpha: 0.25);
+    border-top: 1px solid rgba($color: $trueWhite, $alpha: 0.5);
+    border-left: 1px solid rgba($color: $trueWhite, $alpha: 0.5);
+    backdrop-filter: blur(10px);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+}
+
+.welcome__div--content {
+    transform: translateX(-40px);
+    max-width: 700px;
+    box-shadow: 0 15px 30px rgba($color: $trueBlack, $alpha: 0.1);
+    border-radius: 20px;
+    border: 1px solid rgba($color: $trueWhite, $alpha: 0.25);
+    border-top: 1px solid rgba($color: $trueWhite, $alpha: 0.5);
+    border-left: 1px solid rgba($color: $trueWhite, $alpha: 0.5);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+}
+.welcome__div--content--title {
+    font-size: 2em;
+}
+
+.welcome__div--content--text {
+    font-size: 1.2em;
+}
+
+.welcome-content__imgBlock {
+    max-width: 500px;
+    max-height: 500px;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 50%;
+    @include smooth;
+}
+
+.welcome-content__imgBlock:hover {
+    border-radius: 1px;
+    transform: scale(1.2);
+}
+
+.welcome-content__imgBlock:hover img {
+    transform: scale(0.9) translateY(-70px);
+}
+
+.welcome-content__imgBlock img {
+    @include smooth;
+    background-size: cover;
+    width: 90%;
+    height: 90%;
+    transform: translateY(-50px);
+}
+// КОНЕЦ стилей для блока "Приветствие"
+
+
+// НАЧАЛО стилей для блока "Преимущества"
+.advantages-container {
+    background: $trueBlack;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    flex-wrap: wrap;
+}
+
+.box {
+    background: $trueBlack;
+    position: relative;
+    width: 320px;
+    height: 400px;
+    color: $trueWhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 30px;
+    transition: .5s;
+}
+
+.box:hover {
+    transform: translateY(-20px);
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, $orange1, $purple5);
+}
+
+.box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, $green2, $purple2);
+    filter: blur(30px);
+}
+
+.box:nth-child(2)::before,
+.box:nth-child(2)::after {
+    background: linear-gradient(45deg, $orange1, $purple5);
+}
+
+.box:nth-child(3)::before,
+.box:nth-child(3)::after {
+    background: linear-gradient(315deg, $purple5, $green2);
+}
+
+.box:nth-child(4)::before,
+.box:nth-child(4)::after {
+    background: linear-gradient(225deg, $cyan5, $orange1);
+}
+
+.box:nth-child(5)::before,
+.box:nth-child(5)::after {
+    background: linear-gradient(135deg, $cyan4, $orange2);
+}
+
+.box__span {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    background: rgba($color: $trueBlack, $alpha: 0.6);
+    z-index: 2;
+}
+
+.box__span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba($color: $trueWhite, $alpha: 0.1);
+    pointer-events: none;
+    opacity: 1;
+    transition: .5s;
+}
+
+.box:hover .box__span::before {
+    opacity: 0;
+}
+
+.content {
+    position: relative;
+    z-index: 10;
+    padding: 20px 40px;
+}
+
+.box__title {
+    font-size: 2em;
+    color: rgba($color: $trueWhite, $alpha: 0.7);
+    margin: 0 0 10px 0;
+    transition: .5s;
+}
+
+.box:hover .box__title {
+    color: $trueWhite;
+    text-shadow: 0 0 1px $blueMain, 0 0 10px rgba($color: $trueBlack, $alpha: 0.4);
+}
+
+.box__text {
+    font-size: 1.1em;
+    color: rgba($color: $trueWhite, $alpha: 0.7);
+    margin: 0 0 10px 0;
+    line-height: 1.4em;
+    transition: .5s;
+}
+
+.box:hover .box__text {
+    color: $trueWhite;
+    text-shadow: 0 0 1px $blueMain, 0 0 10px rgba($color: $trueBlack, $alpha: 0.4);
+}
+
+.box__link {
+    display: inline-block;
+    font-size: 1.1em;
+    padding: 10px;
+    color: rgba($color: $trueBlack, $alpha: 0.8);
+    background: $trueWhite;
+    font-weight: 400;
+    transition: 1.1s;
+    opacity: 0;
+}
+
+.box:hover .box__link {
+    transition: 1.1s;
+    opacity: 1;
+}
+
+.box__link:hover {
+    @include smooth;
+    color: $trueBlack;
+    text-shadow: 0 0 1px $blueMain, 0 0 10px rgba($color: $trueBlack, $alpha: 0.4);
+}
+// КОНЕЦ стилей для блока "Преимущества"
+
+
+
+// НАЧАЛО стилей для блока "Умения и навыки"
+.skills {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    background: $purple4;
+    min-height: 100vh;
 
 }
 
-.main__title {
-    border: 1px solid #123123;
+.skills::before {
+    content: '';
+    position: absolute;
+    top: 45%;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: $green1;
+}
+
+.skills-container {
+    width: 900px;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.skills__card {
+    position: relative;
+    width: 250px;
+    height: 300px;
+    text-align: center;
+    z-index: 10;
+    margin: 20px 20px 60px;
+    transition: .5s;
+}
+
+.skills__card-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba($color: $trueWhite, $alpha: 0.05);
+    box-shadow: 0 15px 35px rgba($color: $trueBlack, $alpha: 0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba($color: $trueWhite, $alpha: 0.1);
+    z-index: 10;
+    border-radius: 10px;
+}
+
+.skills__card-box--percent {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    z-index: 100;
+}
+
+.skills__card-box--number {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
-.main__img {
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-}
 
-.title-text {
-    font-size: 50px;
+.skills__card-box--number--h2 {
+    color: $trueWhite;
     font-weight: 700;
-    text-align: center;
-    padding: 5px 20px;
+    font-size: 50px;
 }
 
-.subtitle-text {
-    font-size: 30px;
-    font-weight: 500;
-    text-align: center;
-    padding: 0 150px;
+.skills__card-box--number--span {
+    font-size: 24px;
 }
 
+.skills__card-box--svg {
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+.skills__card-box--svg circle {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke-width: 10;
+    stroke: rgba($color: $trueBlack, $alpha: 0.05);
+    transform: translate(5px, 5px);
+}
+
+.skills__card-box--svg circle:nth-child(2) {
+    stroke: $trueWhite;
+    stroke-dasharray: 440px;
+    stroke-dashoffset: 440px;
+}
+// Здесь, изменяя числа (90. 85. 45), можно изменять наполненность круга
+.skills__card:nth-child(1) .skills__card-box--svg circle:nth-child(2) {
+    stroke-dashoffset: calc(440px - (440px * 90) / 100);
+}
+.skills__card:nth-child(2) .skills__card-box--svg circle:nth-child(2) {
+    stroke-dashoffset: calc(440px - (440px * 85) / 100);
+}
+.skills__card:nth-child(3) .skills__card-box--svg circle:nth-child(2) {
+    stroke-dashoffset: calc(440px - (440px * 45) / 100);
+}
+
+.skills__card-box--text {
+    position: absolute;
+    bottom: -42px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    padding: 30px 20px 10px;
+    background: red;
+    z-index: 1;
+    color: $trueWhite;
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 15px 35px rgba($color: $trueBlack, $alpha: 0.2);
+    pointer-events: none;
+    transition: bottom 0.5s, z-index 0s, transform 0.5s, padding 0.5s;
+    transition-delay: 0s,0.5s,0s,0.5s;
+    color: $trueWhite;
+}
+
+.skills__card:hover .skills__card-box--text {
+    transition-delay: 0.5s,0.5s,0.5s,0s;
+    bottom: -50px;
+    z-index: 11;
+    transform: translateX(-50%) translateY(-50px);
+    padding: 9px 20px;
+}
+
+.skills__card:nth-child(1) .skills__card-box--text {
+    background: $green1;
+}
+.skills__card:nth-child(2) .skills__card-box--text {
+    background: $blueMain;
+}
+.skills__card:nth-child(3) .skills__card-box--text {
+    background: $orange1;
+}
+// КОНЕЦ стилей для блока "Умения и навыки"
