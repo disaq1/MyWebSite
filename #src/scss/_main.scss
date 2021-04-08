@@ -44,6 +44,14 @@
     align-items: center;
     padding: 50px;
     margin: 0;
+    transition: .5s;
+}
+
+.welcome__div:hover {
+    background: rgba($color: $trueWhite, $alpha: 0.25);
+    box-shadow: 0 15px 35px rgba($color: $trueBlack, $alpha: 0.9);
+    border-bottom: 1px solid rgba($color: $trueWhite, $alpha: 0.5);
+    border-right: 1px solid rgba($color: $trueWhite, $alpha: 0.5);
 }
 
 .welcome__div--content {
@@ -56,10 +64,19 @@
     border-left: 1px solid rgba($color: $trueWhite, $alpha: 0.5);
     backdrop-filter: blur(10px);
     padding: 20px;
+    @include smooth;
     @media screen and (min-width: 798px) {
         transform: translateX(-40px);
     }
 }
+
+.welcome__div--content:hover {
+    background: rgba($color: $trueWhite, $alpha: 0.25);
+    box-shadow: 0 15px 30px rgba($color: $trueBlack, $alpha: 0.5);
+    border-bottom: 1px solid rgba($color: $trueWhite, $alpha: 0.5);
+    border-right: 1px solid rgba($color: $trueWhite, $alpha: 0.5);
+}
+
 .welcome__div--content--title {
     font-size: 1.5em;
     @media screen and (min-width: 720px) {
@@ -221,6 +238,7 @@
 }
 
 .box:hover .box__span::before {
+    transform: translateX(100%);
     opacity: 0;
 }
 
@@ -339,6 +357,14 @@
     border: 1px solid rgba($color: $trueWhite, $alpha: 0.1);
     z-index: 10;
     border-radius: 10px;
+    transition: .8s;
+}
+
+.skills__card:hover .skills__card-box {
+    transition: .5s;
+    transition-delay: .7s;
+    background: rgba($color: $trueWhite, $alpha: 0.1);
+    box-shadow: 0 15px 35px rgba($color: $trueBlack, $alpha: 0.9);
 }
 
 .skills__card-box--percent {
