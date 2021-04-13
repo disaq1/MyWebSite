@@ -45,6 +45,10 @@
     padding: 50px;
     margin: 0;
     transition: .5s;
+
+    @media screen and (min-width: 798px) {
+        margin: 20px 0;
+    }
 }
 
 .welcome__div:hover {
@@ -169,7 +173,8 @@
     transition: .5s;
 }
 
-.box:hover {
+.box:hover,
+.box:focus {
     transform: translateY(-20px);
 }
 
@@ -289,7 +294,8 @@
     opacity: 1;
 }
 
-.box__link:hover {
+.box__link:hover,
+.box__link:focus {
     @include smooth;
     color: $trueBlack;
     text-shadow: 0 0 1px $blueMain, 0 0 10px rgba($color: $trueBlack, $alpha: 0.4);
@@ -305,10 +311,20 @@
     justify-content: center;
     align-items: center;
     padding: 40px 0;
-    background: $purple4;
+    background-image: var(--gradient);
     min-height: 100vh;
     min-width: 100vw;
+    background-size: 200%;
+    animation: bg-animation 10s linear alternate infinite;
+}
 
+@keyframes bg-animation {
+    0% {
+        background-position: left;
+    }
+    100% {
+        background-position: right;
+    }
 }
 
 .skills::before {
