@@ -32,3 +32,15 @@ $orange2: #BF8130;
 $orange3: #A65E00;
 $orange4: #FFAC40;
 $orange5: #FFC273;
+
+:root {
+    --gradient: linear-gradient(
+        45deg,
+        #845ec2,
+        #d65db1,
+        #ff6f91,
+        #ff6971,
+        #ffc75f,
+        #f9f871
+    );
+}
