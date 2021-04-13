@@ -1,3 +1,15 @@
+:root {
+  --gradient: linear-gradient(
+        45deg,
+        #845ec2,
+        #d65db1,
+        #ff6f91,
+        #ff6971,
+        #ffc75f,
+        #f9f871
+    );
+}
+
 @font-face {
   font-family: "GothamPro";
   font-display: swap;
@@ -593,7 +605,8 @@ input:focus {
   transition: .5s;
 }
 
-.box:hover {
+.box:hover,
+.box:focus {
   -webkit-transform: translateY(-20px);
       -ms-transform: translateY(-20px);
           transform: translateY(-20px);
@@ -734,7 +747,8 @@ input:focus {
   opacity: 1;
 }
 
-.box__link:hover {
+.box__link:hover,
+.box__link:focus {
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -754,9 +768,32 @@ input:focus {
       -ms-flex-align: center;
           align-items: center;
   padding: 40px 0;
-  background: #383CDF;
+  background-image: var(--gradient);
   min-height: 100vh;
   min-width: 100vw;
+  background-size: 200%;
+  -webkit-animation: bg-animation 10s linear alternate infinite;
+          animation: bg-animation 10s linear alternate infinite;
+}
+
+@-webkit-keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+
+  100% {
+    background-position: right;
+  }
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+
+  100% {
+    background-position: right;
+  }
 }
 
 .skills::before {
@@ -1275,6 +1312,10 @@ li {
 }
 
 @media screen and (min-width: 798px) {
+  .welcome__div {
+    margin: 20px 0;
+  }
+
   .welcome__div--content {
     -webkit-transform: translateX(-40px);
         -ms-transform: translateX(-40px);
@@ -1355,6 +1396,14 @@ li {
 }
 
 @media screen and (max-width: 798px) {
+  .header {
+    padding: 10px 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 20px;
+  }
+
   .header__nav {
     margin: 5px 0 0;
     max-width: none;
@@ -1382,16 +1431,21 @@ li {
         -ms-flex-align: center;
             align-items: center;
     background-color: #61A7D9;
-    -webkit-transform: translateY(-200%);
-        -ms-transform: translateY(-200%);
-            transform: translateY(-200%);
+    -webkit-transform: translateY(-150%);
+        -ms-transform: translateY(-150%);
+            transform: translateY(-150%);
     z-index: -1;
+    opacity: 0;
   }
 
   .site-nav--opened {
+    opacity: 1;
+    z-index: 999;
     -webkit-transform: translateY(0);
         -ms-transform: translateY(0);
             transform: translateY(0);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
   }
 
   .site-nav__item {
