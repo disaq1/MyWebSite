@@ -771,9 +771,9 @@ input:focus {
   background-image: var(--gradient);
   min-height: 100vh;
   min-width: 100vw;
-  background-size: 200%;
-  -webkit-animation: bg-animation 10s linear alternate infinite;
-          animation: bg-animation 10s linear alternate infinite;
+  background-size: 400%;
+  -webkit-animation: bg-animation 8s linear alternate infinite;
+          animation: bg-animation 8s linear alternate infinite;
 }
 
 @-webkit-keyframes bg-animation {

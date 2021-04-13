@@ -314,8 +314,8 @@
     background-image: var(--gradient);
     min-height: 100vh;
     min-width: 100vw;
-    background-size: 200%;
-    animation: bg-animation 10s linear alternate infinite;
+    background-size: 400%;
+    animation: bg-animation 8s linear alternate infinite;
 }
 
 @keyframes bg-animation {
