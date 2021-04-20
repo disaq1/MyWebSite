@@ -1,0 +1,147 @@
+﻿.containerq { 
+    // position: absolute;
+    display: flex;
+    width: 1000px;
+    height: 500px;
+    margin: 0;
+    padding: 0;
+}
+
+.boxq {
+    position: relative;
+    width: 250px;
+    height: 500px;
+    transition: 0.5s;
+    background: #ccc;
+}
+
+.boxq:hover {
+    transform: scale(1.1);
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba($color: $trueBlack, $alpha: 1.0);
+}
+
+.boxq:nth-child(odd) .trumb{
+    bottom: 0;
+    left: 0;
+}
+
+.boxq:nth-child(even) .details{
+    bottom: 0;
+    left: 0;
+}
+
+.boxq:nth-child(1) .details{
+    background: red;
+}
+.boxq:nth-child(2) .details{
+    background: orange;
+}
+.boxq:nth-child(3) .details{
+    background: yellowgreen;
+}
+.boxq:nth-child(4) .details{
+    background: green;
+}
+
+.trumb {
+    position: absolute;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.trumb img {
+    width: 100%;
+}
+
+.details {
+    position: absolute;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background: #262626;
+}
+
+.content {
+    position: absolute;
+    top: calc(50% + 16px);
+    transform: translateY(-50%);
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+.boxq:hover .content {
+    top: 50%;
+}
+
+.content img {
+    width: 80px;
+}
+
+.content h3 {
+    margin: 0;
+    padding: 10px 0;
+    color: $trueWhite;
+}
+
+.content a {
+    display: inline-block;
+    padding: 5px 20px;
+    color: $trueWhite;
+    border: 2px solid $trueWhite;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.5s;
+    transform: scale(0);
+}
+
+.content a:hover {
+    color: #262626;
+    background: $trueWhite;
+}
+
+.boxq:hover .content a {
+    transform: scale(1);
+}
+
+@media screen and (max-width:1000px) {
+    .containerq {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .boxq {
+        height: 250px;
+    }
+    .trumb {
+        display: none;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .containerq {
+        display: initial;
+    }
+    .boxq {
+        width: 50%;
+        height: 250px;
+        float: left;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .containerq {
+        top: 0;
+        left: 0;
+        transform: translate(0);
+    }
+    .boxq {
+        width: 100%;
+        height: 250px;
+        float: none;
+    }
+}
